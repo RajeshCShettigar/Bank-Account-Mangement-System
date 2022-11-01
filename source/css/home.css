@@ -25,4 +25,20 @@ body .container{
      border-radius: 10px;
      border: 1px solid rgba( 255, 255, 255, 0.18 );
      text-align: center;
+     justify-content: center;
+     align-items: center;
+    
+}
+.container .service-box{
+    display: flex;
+}
+ .container .service-box .services{
+    height:20rem;
+    width:20rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 201, 130);
+    display: flex;
+    overflow: hidden;
+    margin:2rem;
 }
