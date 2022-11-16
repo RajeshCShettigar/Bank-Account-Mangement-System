@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <div className='login'>
       <div className="container">
-        <h1>Welcome to Bank of PRK</h1>
+        <h1>Welcome to Bank of Barodchi</h1>
         <div className="service-box">
           <div className="services" id="admin">
             <a href="google.com">Admin Login</a>
