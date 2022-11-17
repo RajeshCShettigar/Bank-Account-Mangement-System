@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.login, .admin, .dashboard, .netbanking{
+.login{
     display: flex;
     height: 90vh;
     align-items: center;
