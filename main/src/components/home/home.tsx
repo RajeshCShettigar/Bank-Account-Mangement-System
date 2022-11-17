@@ -1,19 +1,15 @@
 import './style.css';
-
-const Login = () => {
+const Home = () => {
   return (
     <div className='login'>
       <div className="container">
         <h1>Welcome to Bank of Barodchi</h1>
         <div className="service-box">
           <div className="services" id="admin">
-            <a href="google.com">Admin Login</a>
+            <a href="/admin">Admin Login</a>
           </div>
           <div className="services" id="register">
-            <a href="google.com">New Customer</a>
-          </div>
-          <div className="services" id="netbanking">
-            <a href="google.com">Net Banking</a>
+            <a href="/customer">Customer Login</a>
           </div>
         </div>
       </div>
@@ -21,4 +17,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Home;
