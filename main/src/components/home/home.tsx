@@ -17,13 +17,13 @@ const Home = () => {
         <h1>Welcome to Bank of Barodchi</h1>
           <div className="service-box">
           <div className="services" id="admin">
-            <Link to="/admin" onClick={()=>GoToAdmin()}>Admin Login</Link>
+            <Link to="/admin" onClick={GoToAdmin}>Admin Login</Link>
           </div>
           <div className="services" id="register">
-            <Link to="/customer" onClick={()=>GoToCustomer()}>Customer Login</Link>
+            <Link to="/customer" onClick={GoToCustomer}>Customer Login</Link>
           </div>
           </div>
-        <button onClick={()=>GoToHome()}>Home</button>
+        <button onClick={GoToHome}>Home</button>
       </div>
     </div>
   );
