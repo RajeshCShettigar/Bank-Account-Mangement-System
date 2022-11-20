@@ -1,4 +1,5 @@
 import "./style.css";
+
 const NewCustomer = () => {
     return (
         <div className="new-customer text-left">

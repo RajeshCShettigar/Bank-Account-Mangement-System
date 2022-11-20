@@ -5,7 +5,7 @@ const UpdateInfo=()=>{
         <div className="update-info mx-4">
              <div className="detail-entry mt-4">
             <div className="detail-enter d-flex flex-row pl-3 py-4 text-center">
-                <h4 className="col-3">Enter the Customer ID :</h4>
+                <h4 className="col-3">Enter the Account Number :</h4>
                 <input type="text" className="form-control" name="custid" />
             </div>
             <div className="text-center">
