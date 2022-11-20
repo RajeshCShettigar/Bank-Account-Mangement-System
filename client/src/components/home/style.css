@@ -1,0 +1,43 @@
+.home{
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+   background: url('../../images/sampleBackground.jpg');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+ }
+  .home .container{
+     height:80%;
+     width:80%;
+     background: rgba( 255, 255, 255, 0 );
+     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+     backdrop-filter: blur( 1.5px );
+     -webkit-backdrop-filter: blur( 1.5px );
+     border-radius: 10px;
+     border: 1px solid rgba( 255, 255, 255, 0.18 );
+     text-align: center;
+     justify-content: center;
+     align-items: center; 
+ }
+ .container .service-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .container .service-box .services{
+    height:25rem;
+    width:25rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    overflow: hidden;
+    margin:2rem;
+ }
+ .card-body img{
+    height: 250px;
+    width:250px;
+ }
