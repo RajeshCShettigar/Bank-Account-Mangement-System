@@ -4,8 +4,8 @@ const DeleteEmployee= () => {
         <div className="delete-account mx-4">
             <div className="detail-entry mt-4">
             <div className="detail-enter d-flex flex-row pl-3 py-4 text-center">
-                <h4 className="col-3">Enter the Customer ID :</h4>
-                <input type="text" className="form-control " name="custid" />
+                <h4 className="col-3">Enter the Employee ID :</h4>
+                <input type="text" className="form-control " name="empid" />
             </div>
             <div className="text-center">
             <button type="button" className="col-3 btn btn-success mx-3 my-3">Proceed</button>

@@ -1,52 +1,44 @@
 import './style.css';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const ListEmployee = () => {
+    const [empData, setempData] = useState([]);
+    const employeeData = async () => {
+        try {
+            const data = await axios.get(
+                "http://localhost:5000/listemployee"
+            );
+            console.log(data.data);
+            setempData(data.data);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+    useEffect(() => {
+        employeeData();
+    }, []);
     return (
         <div className='list-customer mx-4 my-2'>
             <div className="d-flex flex-row my-2 justify-content-center">
-            <h2 className="text-center">Customer Details</h2>
-            <button type="button" className="col-3 btn btn-success mx-4 text-lg">Refresh</button>
+                <h2 className="text-center">Employee Details</h2>
             </div>
-            <table class="table">
-                <thead class="thead-dark text-white bg-dark">
+            <table className="table">
+                <thead className="thead-dark text-white bg-dark">
                     <tr>
-                        <th scope="col">Account No.</th>
+                        <th scope="col">Employee ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Phone No.</th>
-                        <th scope="col">Adhar No.</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Zipcode</th>
-                        <th scope="col">Balance</th>
+                        <th scope="col">Password</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>jrgrng</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>jrgrng</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>jrgrng</td>
-                    </tr>
+                    {empData.map((employee) => {
+                        return (<tr>
+                            <td>{employee.empid}</td>
+                            <td>{employee.ename}</td>
+                            <td>{employee.epassword}</td>
+                        </tr>)
+                    })}
                 </tbody>
             </table>
         </div>

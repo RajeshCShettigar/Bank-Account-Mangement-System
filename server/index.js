@@ -65,7 +65,7 @@ app.post("/newcustomer", (req, resp) => {
     let sql = `insert into customer values (${custid},'${cname}',${adharno},${phoneno},'${address}',${balance})`;
     db.query(sql, (err) => {
         if (err) {
-            resp.send('Insertion Failed!' + JSON.stringify(err, undefined, 2))
+            resp.send("false")
         } else {
             resp.send("data inserted successfully");
         }
@@ -77,11 +77,10 @@ app.post("/newemployee", (req, resp) => {
     let empid = parseInt(edata.empid);
     let ename = edata.ename;
     let epassword=edata.epassword;
-    console.log(eid, ename,epassword);
-    let sql = `insert into employee values (${eid},'${ename}','${epassword}')`;
+    let sql = `insert into employee values (${empid},'${ename}','${epassword}')`;
     db.query(sql, (err) => {
         if (err) {
-            resp.send('Insertion Failed!' + JSON.stringify(err, undefined, 2))
+            resp.send("false");
         } else {
             resp.send("data inserted successfully");
         }
