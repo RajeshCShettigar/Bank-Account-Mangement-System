@@ -10,24 +10,27 @@ const ListCustomer = () => {
             <table class="table">
                 <thead class="thead-dark text-white bg-dark">
                     <tr>
-                        <th scope="col">Customer ID</th>
+                        <th scope="col">Account No.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Phone No.</th>
                         <th scope="col">Adhar No.</th>
                         <th scope="col">Address</th>
+                        <th scope="col">Zipcode</th>
                         <th scope="col">Balance</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>1</td>
+                        <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>@mdo</td>
                         <td>Mark</td>
                         <td>Otto</td>
+                        <td>jrgrng</td>
                     </tr>
                     <tr>
+                        <th scope="row">2</th>
                         <td>Jacob</td>
                         <td>Thornton</td>
                         <td>@fat</td>
@@ -36,6 +39,7 @@ const ListCustomer = () => {
                         <td>jrgrng</td>
                     </tr>
                     <tr>
+                        <th scope="row">3</th>
                         <td>Larry</td>
                         <td>the Bird</td>
                         <td>@twitter</td>

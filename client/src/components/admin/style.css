@@ -31,6 +31,10 @@
   .nav-menu-items {
     width: 100%;
   }
+  .navbar .admin{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
   
   .navbar-toggle {
     background-color: #060b26;

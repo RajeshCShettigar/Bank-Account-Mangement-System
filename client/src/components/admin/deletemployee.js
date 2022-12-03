@@ -1,4 +1,5 @@
-const DeleteAccount = () => {
+import './style.css';
+const DeleteEmployee= () => {
     return (
         <div className="delete-account mx-4">
             <div className="detail-entry mt-4">
@@ -26,4 +27,4 @@ const DeleteAccount = () => {
     )
 }
 
-export default DeleteAccount;
+export default DeleteEmployee;
