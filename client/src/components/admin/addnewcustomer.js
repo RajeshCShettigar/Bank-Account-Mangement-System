@@ -44,35 +44,35 @@ const NewCustomer = () => {
       }
     return (
         <div className="new-customer text-left">
-            <h1 className="text-center"> Enter the details of the Customer</h1>
+            <h1 className="text-center">Customer Details </h1>
             <form onSubmit={(e)=>submitData(e)}>
                     <div className="mx-3 my-3 row ">
-                        <label For="custid" className="col-3">Enter the customer id</label>
+                        <label For="custid" className="col-3">Customer ID</label>
                         <input ref={inputRef} onChange={(e)=>handle(e)} value={data.custid} type="text" className="form-control col" id="custid" placeholder="123"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="name" className="col-3">Enter the name</label>
+                    <label For="name" className="col-3">Name</label>
                         <input onChange={(e)=>handle(e)} value={data.name} type="text" className="form-control col" id="name" placeholder="name"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="adharno" className="col-3">Enter the adhar number </label>
+                    <label For="adharno" className="col-3">Adhar Number</label>
                         <input onChange={(e)=>handle(e)} value={data.adharno} type="number"  className="form-control col" id="adharno" placeholder="0000 0000 0000"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="custid" className="col-3">Enter the phone number </label>
+                    <label For="custid" className="col-3">Phone Number </label>
                         <input onChange={(e)=>handle(e)} value={data.phoneno} type="number" className="form-control col" id="phoneno" placeholder="000 000 0000" />
                     </div>
                     <div className="mx-3 my-3 row ">
-                    <label For="street" className="col-3">Enter the Address</label>
+                    <label For="street" className="col-3">Address</label>
                         <input onChange={(e)=>handle(e)} value={data.address} type="text" className="form-control col" id="address"placeholder="3rd block Bangalore" />
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="custid" className="col-3">Enter the balance</label>
+                    <label For="custid" className="col-3">Balance</label>
                         <input onChange={(e)=>handle(e)} value={data.balance} type="number" min="100" className="form-control col" id="balance" placeholder="100" />
                     </div>
                     <div className="mx-3 my-3 row">
-                    <button type="submit" className="col-3 btn btn-warning mx-2">Add Customer</button>
-                    <button type="reset" className="col-3 btn btn-danger mx-2" onClick={()=>resetForm()}>Clear Fields</button>
+                    <button type="submit" className="col-3 btn btn-warning mx-2">Add</button>
+                    <button type="reset" className="col-3 btn btn-danger mx-2" onClick={()=>resetForm()}>Clear </button>
                     </div>
             </form>
         </div>

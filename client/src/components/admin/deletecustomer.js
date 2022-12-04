@@ -32,7 +32,7 @@ const DeleteCustomer = () => {
             <div className="detail-entry mt-4">
             <form onSubmit={(e)=>submitData(e)}>
             <div className="detail-enter d-flex flex-row pl-3 py-4 text-center">
-                <h4 className="col-3">Enter the Customer ID :</h4>
+                <h4 className="col-3">Customer ID :</h4>
                     <input ref={inputRef} onChange={(e)=>handle(e)} type="number" className="form-control " id="custid" />
             </div>
             <div className="text-center">
