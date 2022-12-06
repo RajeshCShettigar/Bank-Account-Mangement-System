@@ -25,19 +25,21 @@ const AdminLogin = () => {
         newdata[e.target.id] = e.target.value;
         setData(newdata);
     }
-    const submitData=(e)=>{
+    const submitData= (e)=>{
         e.preventDefault();
         axios.post(url,data
             ).then(resp=>{
-                if(resp.data){
+                if(resp.data===true){
                    console.log("login success");
                 }else{
-                    //this.setState({flag: 1}); 
+                   setErrMsg("Invalid username or password");
+                   console.log(errMsg);
                     resetForm();
                 }
             }).catch(err=>{
                 console.log(err);
             });
+            resetForm();
     }
     return (
         <div className="admin-login">
@@ -56,10 +58,10 @@ const AdminLogin = () => {
                 </div>
                 <button type="submit" className="btn">Sign in</button>
                 <div>
-                <p ref={errRef} className={errMsg?"err-msg-on":"err-msg-off"}
-                    aria-live="assertive">{errMsg}</p>
                  </div>
                 </form>
+                <p ref={errRef} className={errMsg?"err-msg-on":"err-msg-off"}
+                    aria-live="assertive">{errMsg}</p>
             </div>
         </div>
     )
