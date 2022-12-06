@@ -2,6 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 const Withdraw = () => {
+    const withdrawRef=useRef();
+    const [successMsg,setSuccessMsg]=useState('');
+    useEffect(()=>{
+        setSuccessMsg(false);
+      },[]); 
     const inputRef = useRef(null);
     useEffect(() => {
         inputRef.current.focus();
@@ -9,8 +14,8 @@ const Withdraw = () => {
     const resetForm=()=>{
         setData({});
       }
-    const url1 = "http://localhost:5000/withdraw";
-    const url2="http://localhost:5000/checkexist";
+    const url1 = "http://localhost:5000/employee/withdraw";
+    const url2="http://localhost:5000/employee/checkexist";
     const [data, setData] = useState({
         custid: "",
         amount: "",
@@ -29,15 +34,15 @@ const Withdraw = () => {
             if(existingdata.balance-data.amount>100){
             axios.post(url1,data
                 ).then(response=>{
-                    alert("Withdraw success");
+                    setSuccessMsg("Withdraw success");
                 }).catch(err=>{
                     console.log(err);
                 });
         }else{
-            alert("Insuffient balance");
+            setSuccessMsg("Insuffient balance");
         }
     }else{
-            alert("Customer ID doesnot exist");
+            setSuccessMsg("Customer ID doesnot exist");
             resetForm();
         }
         }).catch(error=>{
@@ -62,6 +67,8 @@ const Withdraw = () => {
                     <button type="reset" className="col-3 btn btn-warning mx-3 my-3"onClick={()=>resetForm()}>Clear ID</button>
                 </div>  </form>
             </div>
+            <div ref={withdrawRef} className={successMsg?"success-msg-on my-4 mx-4":"success-msg-off"}
+                    aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
         </div>
     );
 };

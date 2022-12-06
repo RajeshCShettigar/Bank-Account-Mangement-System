@@ -8,7 +8,7 @@ const ListCustomer = () => {
   const customerData=async()=>{
     try{
         const data=await axios.get(
-         "http://localhost:5000/listcustomer"
+         "http://localhost:5000/admin/listcustomer"
         );
        setcustData(data.data)
     }catch(e){

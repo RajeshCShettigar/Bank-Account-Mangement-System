@@ -3,11 +3,16 @@ import React,{useState,useRef,useEffect} from 'react';
 import Axios from 'axios';
 
 const NewCustomer = () => {
+  const newcustomerRef=useRef();
+  const [successMsg,setSuccessMsg]=useState('');
+  useEffect(()=>{
+      setSuccessMsg(false);
+    },[]); 
   const inputRef=useRef(null);
   useEffect(()=>{
      inputRef.current.focus();
   },[]);  
-  const url="http://localhost:5000/newcustomer";
+  const url="http://localhost:5000/admin/newcustomer";
     const [data,setData]=useState({
         custid:"",
         name:"",
@@ -33,9 +38,9 @@ const NewCustomer = () => {
       })
       .then(resp=>{
         if(resp.data===false){
-          alert("Customer id already exists")
+          setSuccessMsg("Customer id already exists");
         }else{
-          alert("New customer added");
+          setSuccessMsg("New customer added");
         }
       })
     };
@@ -43,7 +48,8 @@ const NewCustomer = () => {
         setData({});
       }
     return (
-        <div className="new-customer text-left mx-4 mt-4 px-4 py-4">
+      <div className="customer mx-1 mt-1 px-4 py-4">
+        <div className="new-customer text-left ">
             <h1 className="text-center">Customer Details </h1>
             <form onSubmit={(e)=>submitData(e)}>
                     <div className="mx-3 my-3 row ">
@@ -70,11 +76,14 @@ const NewCustomer = () => {
                     <label htmlFor="custid" className="col-3">Balance</label>
                         <input onChange={(e)=>handle(e)} value={data.balance} type="number" min="100" className="form-control col" id="balance" placeholder="100" />
                     </div>
-                    <div className="mx-3 my-3 row">
-                    <button type="submit" className="col-3 btn btn-warning mx-2">Add</button>
-                    <button type="reset" className="col-3 btn btn-danger mx-2" onClick={()=>resetForm()}>Clear </button>
+                    <div className="mx-3 my-3 row justify-content-center">
+                    <button type="submit" className="col-3 btn btn-warning mx-2 my-4">Add</button>
+                    <button type="reset" className="col-3 btn btn-danger mx-2 my-4" onClick={()=>resetForm()}>Clear </button>
                     </div>
             </form>
+            </div>
+            <div ref={newcustomerRef} className={successMsg?"success-msg-on my-4 ":"success-msg-off"}
+                    aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
         </div>
     );
 };

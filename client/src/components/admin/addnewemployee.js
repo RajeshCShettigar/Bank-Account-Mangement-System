@@ -3,7 +3,12 @@ import React,{useState,useEffect,useRef} from 'react';
 import Axios from 'axios';
 
 const NewEmployee=()=>{
-    const url="http://localhost:5000/newemployee";
+  const newemployeeRef=useRef();
+  const [successMsg,setSuccessMsg]=useState('');
+  useEffect(()=>{
+      setSuccessMsg(false);
+    },[]); 
+    const url="http://localhost:5000/admin/newemployee";
     const [data,setData]=useState({
         empid:"",
         ename:"",
@@ -28,9 +33,9 @@ const NewEmployee=()=>{
     })
     .then(resp=>{
       if(resp.data===false){
-        alert("Employee id already exists")
+        setSuccessMsg("Employee id already exists")
       }else{
-        alert("New employee added");
+        setSuccessMsg("New employee added");
       }
     })
     };
@@ -38,7 +43,8 @@ const NewEmployee=()=>{
       setData({});
     }
     return(
-           <div className="new-customer text-left mx-4 mt-4 px-4 py-4">
+      <div className="employee mx-1 mt-1 px-4 py-4">
+           <div className="new-customer text-left ">
             <h1 className="text-center"> Employee Details</h1>
             <form onSubmit={(e)=>submitData(e)}>
                     <div className="mx-3 my-3 row ">
@@ -53,12 +59,15 @@ const NewEmployee=()=>{
                     <label htmlFor="adharno" className="col-3">Password</label>
                         <input onChange={(e)=>handle(e)} value={data.epassword} type="password" className="form-control col" id="epassword" placeholder="........"/>
                     </div>
-                    <div className="mx-3 my-3 row">
-                    <button type="submit" className="col-3 btn btn-warning mx-2">Add </button>
-                    <button type="reset" className="col-3 btn btn-danger mx-2" onClick={()=>resetForm()}>Clear </button>
+                    <div className="mx-3 my-3 row justify-content-center">
+                    <button type="submit" className="col-3 btn btn-warning mx-2 my-4">Add </button>
+                    <button type="reset" className="col-3 btn btn-danger mx-2 my-4" onClick={()=>resetForm()}>Clear </button>
                     </div>
             </form>
         </div>
-    )
+            <div ref={newemployeeRef} className={successMsg?"success-msg-on my-4 ":"success-msg-off"}
+                    aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
+        </div>
+      )
 }
 export default NewEmployee;

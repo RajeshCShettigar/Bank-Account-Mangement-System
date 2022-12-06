@@ -1,11 +1,9 @@
 import './login.css';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import Admin from '../admin/admin';
-import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
-    const url="http://localhost:5000/validateadminlogin";
+    const url="http://localhost:5000/login/validateadminlogin";
     const inputRef = useRef(null);
     useEffect(() => {
         inputRef.current.focus();

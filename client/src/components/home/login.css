@@ -4,6 +4,10 @@
     border-radius: 10px;
     padding-top: 15px;
     padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width:320px;
+    background-color: rgb(248, 207, 158);
 }
 
 .login-box h1{

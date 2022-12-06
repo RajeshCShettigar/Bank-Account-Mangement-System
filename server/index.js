@@ -1,36 +1,22 @@
 const express = require("express");
 const bodyparser = require('body-parser');
 const cors = require('cors')
-
-//initial configuration
-const mysql = require("mysql");
-const { response } = require("express");
-
-const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-  database:"testmysql"
-});
-
-db.connect((err) => {
-    if (err) {
-        console.log('Connection Failed!' + JSON.stringify(err, undefined, 2))
-    }
-    else {
-        console.log("MySQL Connected");
-    }
-});
-//express app config
+const PORT=5000;
+const adminrouter=require('./routes/admin');
+const loginrouter=require('./routes/login');
+const employeerouter=require('./routes/employee');
 const app = new express();
+
 app.use(cors());
 app.use(bodyparser.json());
-app.use(express.urlencoded({ extended: true }))
-
-app.listen(5000, () => {
+app.use(express.urlencoded({ extended: true }));
+app.use('/admin', adminrouter);
+app.use('/login',loginrouter);
+app.use('/employee',employeerouter);
+app.listen(PORT, () => {
     console.log("server listening on port 5000");
 });
-
+/*
 //list all customer Details
 app.get('/listcustomer', (req, resp) => {
     db.query('SELECT * FROM customer', (err, rows, fields) => {
@@ -86,6 +72,7 @@ app.post("/newemployee", (req, resp) => {
         }
     });
 });
+
 //request customer information
 app.post('/requestcustomerinfo', (req, resp) => {
     let cdata = req.body;
@@ -112,7 +99,7 @@ app.post('/requestemployeeinfo', (req, resp) => {
         }
     });
 });
-
+/*
 //delete customer
 app.post('/deletecustomer', (req, resp) => {
     let cdata = req.body;
@@ -139,6 +126,9 @@ app.post('/deleteemployee', (req, resp) => {
         }
     });
 });
+*/
+
+/*
 //update customer information
 app.post('/updatecustinfo', (req, resp) => {
     let cdata = req.body;
@@ -179,6 +169,7 @@ app.post('/updateempinfo',(req,resp)=>{
     }
   });
 });
+
 //check exist
 app.post('/checkexist',(req,resp)=>{
   let cdata=req.body;
@@ -193,6 +184,7 @@ app.post('/checkexist',(req,resp)=>{
       }
   });
 });
+
 
 //deposit
 app.post('/deposit',(req,resp)=>{
@@ -222,6 +214,7 @@ app.post('/withdraw',(req,resp)=>{
     }
   });
 });
+
 //existence of two Customer ID
 app.post('/checkexisttwoID',(req,resp)=>{
     let cdata=req.body;
@@ -237,6 +230,8 @@ app.post('/checkexisttwoID',(req,resp)=>{
         }
     });
 });
+*/
+/*
 //validate  admin login
 app.post('/validateadminlogin',(req,resp)=>{
   let adata=req.body;
@@ -286,3 +281,4 @@ app.post('/validateemployeelogin',(req,resp)=>{
   }
   });
 });
+*/

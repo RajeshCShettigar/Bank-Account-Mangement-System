@@ -3,7 +3,12 @@ import React,{useState,useEffect,useRef} from 'react';
 import Axios from 'axios';
 
 const DeleteEmployee = () => {
-    const url="http://localhost:5000/deleteemployee";
+  const deleteRef=useRef();
+  const [successMsg,setSuccessMsg]=useState('');
+  useEffect(()=>{
+      setSuccessMsg(false);
+    },[]); 
+    const url="http://localhost:5000/admin/deleteemployee";
     const [data,setData]=useState({
         empid:""
     });
@@ -23,9 +28,9 @@ const DeleteEmployee = () => {
     })
     .then(resp=>{
       if(resp.data===false){
-        alert("Employee id doesnot exists")
+        setSuccessMsg("Employee ID doesnot exist");
       }else{
-        alert("Employee ID deleted");
+        setSuccessMsg("Employee ID deleted");
       }
     })
     };
@@ -46,6 +51,8 @@ const DeleteEmployee = () => {
                     </div>
                 </form>
             </div>
+            <div ref={deleteRef} className={successMsg?"success-msg-on my-4 ":"success-msg-off"}
+                    aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
         </div>
     )
 }

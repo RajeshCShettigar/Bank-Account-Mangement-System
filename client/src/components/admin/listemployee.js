@@ -7,7 +7,7 @@ const ListEmployee = () => {
     const employeeData = async () => {
         try {
             const data = await axios.get(
-                "http://localhost:5000/listemployee"
+                "http://localhost:5000/admin/listemployee"
             );
             setempData(data.data);
         } catch (e) {

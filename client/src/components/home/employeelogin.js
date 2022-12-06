@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 const EmployeeLogin=()=>{
-    const url="http://localhost:5000/validateemployeelogin";
+    const url="http://localhost:5000/login/validateemployeelogin";
     const inputRef = useRef(null);
     useEffect(() => {
         inputRef.current.focus();

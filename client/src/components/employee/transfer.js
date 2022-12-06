@@ -2,6 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 const Transfer=()=>{
+    const transferRef=useRef();
+    const [successMsg,setSuccessMsg]=useState('');
+    useEffect(()=>{
+        setSuccessMsg(false);
+      },[]); 
     const inputRef = useRef(null);
     useEffect(() => {
         inputRef.current.focus();
@@ -20,9 +25,9 @@ const Transfer=()=>{
         setData(newdata);
     }
     let flag1=false,flag2=false;
-    const url1= "http://localhost:5000/deposit";
-    const url2="http://localhost:5000/withdraw";
-    const url3="http://localhost:5000/checkexisttwoID";
+    const url1= "http://localhost:5000/employee/deposit";
+    const url2="http://localhost:5000/employee/withdraw";
+    const url3="http://localhost:5000/employee/checkexisttwoID";
     const submitData=(e)=>{
         e.preventDefault();
        axios.post(url3,data
@@ -54,14 +59,14 @@ const Transfer=()=>{
                         console.log(err);
                     });
                     if(flag1===flag2){
-                        alert("Transfer successs");
+                        setSuccessMsg("Transfer successs");
                     }
             }else{
-                alert("Insuffiecient balance");
+                setSuccessMsg("Insuffiecient balance");
                 resetForm();
             }
          }else{
-            alert("Please enter valid source destination ID's");
+            setSuccessMsg("Please enter valid source destination ID's");
          }
         }).catch(error=>{
             console.log(error);
@@ -90,6 +95,8 @@ const Transfer=()=>{
             </div>
             </form>
         </div>
+        <div ref={transferRef} className={successMsg?"success-msg-on my-4 mx-4":"success-msg-off"}
+                    aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
     </div>
     )
 }
