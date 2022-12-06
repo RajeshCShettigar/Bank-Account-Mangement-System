@@ -38,19 +38,19 @@ const NewEmployee=()=>{
       setData({});
     }
     return(
-           <div className="new-customer text-left">
+           <div className="new-customer text-left mx-4 mt-4 px-4 py-4">
             <h1 className="text-center"> Employee Details</h1>
             <form onSubmit={(e)=>submitData(e)}>
                     <div className="mx-3 my-3 row ">
-                        <label For="custid" className="col-3">Employee ID </label>
+                        <label htmlFor="custid" className="col-3">Employee ID </label>
                         <input ref={inputRef} onChange={(e)=>handle(e)} value={data.empid} type="number" className="form-control col" id="empid" placeholder="123"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="name" className="col-3">Name</label>
+                    <label htmlFor="name" className="col-3">Name</label>
                         <input onChange={(e)=>handle(e)} value={data.ename} type="text" className="form-control col" id="ename" placeholder="name"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="adharno" className="col-3">Password</label>
+                    <label htmlFor="adharno" className="col-3">Password</label>
                         <input onChange={(e)=>handle(e)} value={data.epassword} type="password" className="form-control col" id="epassword" placeholder="........"/>
                     </div>
                     <div className="mx-3 my-3 row">

@@ -119,10 +119,10 @@ app.post('/deletecustomer', (req, resp) => {
     let custid = parseInt(cdata.custid);
     let sql = `DELETE from customer where custid=${custid}`;
     db.query(sql, (err) => {
-        if (err) {
-            resp.send('Execution Failed!' + JSON.stringify(err, undefined, 2))
+      if (err) {
+            resp.send("false");
         } else {
-            resp.send("deletion successfull");
+            resp.send("deletion successful");
         }
     });
 });
@@ -133,7 +133,7 @@ app.post('/deleteemployee', (req, resp) => {
     let sql = `DELETE from employee where empid=${empid}`;
     db.query(sql, (err) => {
         if (err) {
-            resp.send('Execution Failed!' + JSON.stringify(err, undefined, 2))
+            resp.send("false");
         } else {
             resp.send("deletion successfull");
         }
@@ -240,6 +240,7 @@ app.post('/checkexisttwoID',(req,resp)=>{
 //validate  admin login
 app.post('/validateadminlogin',(req,resp)=>{
   let adata=req.body;
+  console.log(adata);
   let username=adata.username;
   let password=adata.password;
   let sql=`select username,password from admin where username='${username}'`;

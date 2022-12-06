@@ -25,7 +25,7 @@ const NewCustomer = () => {
       e.preventDefault();
       Axios.post(url,{
         custid:data.custid,
-        name:data.name,
+        cname:data.name,
         phoneno:data.phoneno,
         adharno:data.adharno,
         address:data.address,
@@ -43,31 +43,31 @@ const NewCustomer = () => {
         setData({});
       }
     return (
-        <div className="new-customer text-left">
+        <div className="new-customer text-left mx-4 mt-4 px-4 py-4">
             <h1 className="text-center">Customer Details </h1>
             <form onSubmit={(e)=>submitData(e)}>
                     <div className="mx-3 my-3 row ">
-                        <label For="custid" className="col-3">Customer ID</label>
+                        <label htmlFor="custid" className="col-3">Customer ID</label>
                         <input ref={inputRef} onChange={(e)=>handle(e)} value={data.custid} type="text" className="form-control col" id="custid" placeholder="123"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="name" className="col-3">Name</label>
+                    <label htmlFor="name" className="col-3">Name</label>
                         <input onChange={(e)=>handle(e)} value={data.name} type="text" className="form-control col" id="name" placeholder="name"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="adharno" className="col-3">Adhar Number</label>
+                    <label htmlFor="adharno" className="col-3">Adhar Number</label>
                         <input onChange={(e)=>handle(e)} value={data.adharno} type="number"  className="form-control col" id="adharno" placeholder="0000 0000 0000"/>
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="custid" className="col-3">Phone Number </label>
+                    <label htmlFor="custid" className="col-3">Phone Number </label>
                         <input onChange={(e)=>handle(e)} value={data.phoneno} type="number" className="form-control col" id="phoneno" placeholder="000 000 0000" />
                     </div>
                     <div className="mx-3 my-3 row ">
-                    <label For="street" className="col-3">Address</label>
+                    <label htmlFor="street" className="col-3">Address</label>
                         <input onChange={(e)=>handle(e)} value={data.address} type="text" className="form-control col" id="address"placeholder="3rd block Bangalore" />
                     </div>
                     <div className="mx-3 my-3 row">
-                    <label For="custid" className="col-3">Balance</label>
+                    <label htmlFor="custid" className="col-3">Balance</label>
                         <input onChange={(e)=>handle(e)} value={data.balance} type="number" min="100" className="form-control col" id="balance" placeholder="100" />
                     </div>
                     <div className="mx-3 my-3 row">

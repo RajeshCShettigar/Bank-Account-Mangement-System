@@ -43,8 +43,9 @@ const Deposit = () => {
       };
     
     return (
-        <div className="deposit-amount">
-            <div className="detail-entry mt-4">
+        <div className="deposit-amount"> 
+            <div className="detail-entry mt-4 mx-4 px-4 py-4">
+                <h4 className="text-center">Details Entry</h4>
                 <form onSubmit={(e)=>submitData(e)}>
                 <div className="mx-3 my-3 row">
                     <label For="custid" className="col-3">Customer ID</label>

@@ -54,7 +54,6 @@ create table admin(
       username varchar(200),
       password varchar(200)
       );
-
 insert into admin values('Admin1','admin@123');
 insert into admin values('Admin2','admin@123');
 

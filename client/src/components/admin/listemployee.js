@@ -9,7 +9,6 @@ const ListEmployee = () => {
             const data = await axios.get(
                 "http://localhost:5000/listemployee"
             );
-            console.log(data.data);
             setempData(data.data);
         } catch (e) {
             console.log(e);

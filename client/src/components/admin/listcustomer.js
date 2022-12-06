@@ -10,7 +10,6 @@ const ListCustomer = () => {
         const data=await axios.get(
          "http://localhost:5000/listcustomer"
         );
-        console.log(data.data);
        setcustData(data.data)
     }catch(e){
         console.log(e);
@@ -21,6 +20,9 @@ const ListCustomer = () => {
   },[]);
     return (
         <div className='list-customer mx-4 my-2'>
+             <div className="d-flex flex-row my-2 justify-content-center">
+                <h2 className="text-center">Customer Details</h2>
+            </div>
             <table className="table">
                 <thead className="thead-dark text-white bg-dark">
                     <tr>

@@ -1,6 +1,8 @@
 import './login.css';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import Admin from '../admin/admin';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
     const url="http://localhost:5000/validateadminlogin";
@@ -19,7 +21,7 @@ const AdminLogin = () => {
     const [errMsg,setErrMsg]=useState('');
     useEffect(()=>{
         setErrMsg(' ');
-      },[data]);
+      },[]);
     const handle = (e) => {
         const newdata = { ...data };
         newdata[e.target.id] = e.target.value;
@@ -27,19 +29,20 @@ const AdminLogin = () => {
     }
     const submitData= (e)=>{
         e.preventDefault();
+        console.log(data);
         axios.post(url,data
             ).then(resp=>{
+                console.log(resp);
+                console.log(resp.data===true);
                 if(resp.data===true){
-                   console.log("login success");
+                  
                 }else{
                    setErrMsg("Invalid username or password");
-                   console.log(errMsg);
                     resetForm();
                 }
             }).catch(err=>{
                 console.log(err);
             });
-            resetForm();
     }
     return (
         <div className="admin-login">
@@ -49,7 +52,7 @@ const AdminLogin = () => {
                 <div className="textbox">
                     <i className="fas fa-user"></i>
                     <input input ref={inputRef} onChange={(e) => handle(e)} value={data.username} 
-                    autoComplete="off" type="text" placeholder="Username"id="username"required/>
+                    autoComplete="off" type="text" placeholder="Username" id="username"required/>
                 </div>
                 <div className="textbox">
                     <i className="fas fa-lock"></i>

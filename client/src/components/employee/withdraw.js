@@ -46,7 +46,8 @@ const Withdraw = () => {
       };
     return (
         <div className="withdraw-amount">
-            <div className="detail-entry mt-4">
+            <div className="detail-entry mt-4 mx-4 px-4 py-4 ">
+            <h4 className="text-center">Details Entry</h4>
             <form onSubmit={(e)=>submitData(e)}>
             <div className="mx-3 my-3 row">
                     <label For="custid" className="col-3">Customer ID</label>
@@ -54,7 +55,7 @@ const Withdraw = () => {
                 </div>
                 <div className="mx-3 my-3 row">
                     <label For="name" className="col-3">WithDraw Amount </label>
-                    <input onChange={(e) => handle(e)} value={data.amount} type="text" className="form-control col" id="amount" placeholder="12000" />
+                    <input onChange={(e) => handle(e)} value={data.amount} type="number" className="form-control col" id="amount" placeholder="12000" />
                 </div>
                 <div className="text-center">
                     <button type="submit" className="col-3 btn btn-success mx-3 my-3">Proceed</button>

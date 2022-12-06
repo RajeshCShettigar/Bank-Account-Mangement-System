@@ -6,7 +6,7 @@ import NavBar from '../home/nav';
 const Home = () => {
     return (
         <div className="home">
-            <h1 className="text-center">Welcome To Bank of PRK</h1>
+            <h1 className="text-center py-4">Welcome To Bank of PRK</h1>
             <div className="container-out">
             <BrowserRouter>
             <NavBar/>
