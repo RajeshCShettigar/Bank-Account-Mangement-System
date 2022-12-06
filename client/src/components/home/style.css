@@ -1,43 +1,50 @@
 .home{
-    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
-   background: url('../../images/sampleBackground.jpg');
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   background-image: url('../../images/bankhome.jpg');
+   height: 100vh; 
     background-position: center;
     background-size: cover;
- }
-  .home .container{
-     height:80%;
-     width:80%;
-     background: rgba( 255, 255, 255, 0 );
-     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-     backdrop-filter: blur( 1.5px );
-     -webkit-backdrop-filter: blur( 1.5px );
-     border-radius: 10px;
-     border: 1px solid rgba( 255, 255, 255, 0.18 );
-     text-align: center;
-     justify-content: center;
-     align-items: center; 
- }
- .container .service-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- .container .service-box .services{
-    height:25rem;
-    width:25rem;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    overflow: hidden;
-    margin:2rem;
- }
- .card-body img{
-    height: 250px;
-    width:250px;
- }
+    z-index: -1;
+}
+.home .container-out{
+   background: rgba( 255, 255, 255, 0 );
+   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+   backdrop-filter: blur( 1.5px );
+   border-radius: 10px;
+   border: 1px solid rgba( 255, 255, 255, 0.18 );
+   width:40%;
+   height:80%;
+   margin:auto;
+}
+.container{
+   background-color: antiquewhite;
+   background: rgba( 255, 255, 255, 0 );
+   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+   backdrop-filter: blur( 1.5px );
+   z-index:1;
+}
+.navbar-container{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   height: 50px;
+}
+.navbar-container .nav-item{
+   font-size: 22px;
+   color: black;
+   text-align: center;
+}
+.navbar-container .item1{
+   width:50%;
+   height: 50%;
+}
+.navbar-container .item2{
+   width:50%;
+   height: 50%;
+}
+.admin-login,.employee-login{
+   width: 40%;
+   margin-top:3%;
+   margin-left:30%;
+   height: 70%;
+}

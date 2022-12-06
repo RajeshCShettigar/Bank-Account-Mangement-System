@@ -32,3 +32,30 @@ insert into employee values(1,'pradeep','password');
 insert into employee values(2,'shailesh','password');
 insert into employee values(3,'ganesh','password');
 select * from employee;
+
+/*withdraw amount*/
+update customer set balance=balance-1000 where custid=1;
+
+/*employee login*/
+select ename,password from employee where ename='pradeep';
+
+/*deposit amount */
+update customer set balance=balance+100 where custid=1;
+
+/*transfer amount */
+  /* 
+  deposit +withdraw 
+  */
+
+select custid,balance from customer where custid in (1,133);
+
+
+create table admin(
+      username varchar(200),
+      password varchar(200)
+      );
+
+insert into admin values('Admin1','admin@123');
+insert into admin values('Admin2','admin@123');
+
+select * from admin;

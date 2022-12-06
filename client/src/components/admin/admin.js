@@ -13,13 +13,13 @@ const Admin=()=>{
         <BrowserRouter>
         <NavBar/>
         <Routes>
-            <Route path="/" element={<NewCustomer/>} />
+            <Route path="/newcustomer" element={<NewCustomer/>} />
             <Route path="/newemployee" element={<NewEmployee/>} />
             <Route path="/deletecustomer" element={<DeleteCustomer/>} />
             <Route path="/deleteemployee" element={<DeleteEmployee/>} />
             <Route path="/listcustomer" element={<ListCustomer/>} />
             <Route path="/listemployee" element={<ListEmployee/>} />
-            <Route path="/logout" element={<h1>Logout Component</h1>} />
+            <Route path="/home" element={<h1>Logout Component</h1>} />
         </Routes>
         </BrowserRouter>
         </div>
