@@ -8,12 +8,9 @@ const EmployeeLogin=()=>{
     useEffect(() => {
         inputRef.current.focus();
     }, []);
-    const resetForm=()=>{
-        setData({});
-      }
       const [data, setData] = useState({
         username: "",
-        password: "",
+        password: ""
     });
     const errRef=useRef();
     const [errMsg,setErrMsg]=useState('');
@@ -27,12 +24,14 @@ const EmployeeLogin=()=>{
     }
     const submitData=(e)=>{
         e.preventDefault();
-        axios.post(url,data
+        axios.post(url,{
+            ename:data.username,
+            epassword:data.password
+        }
             ).then(resp=>{
-                if(resp.data){
+                if(resp.data===true){
                    console.log("login success");
                 }else{
-                    resetForm();
                 }
             }).catch(err=>{
                 console.log(err);

@@ -6,8 +6,8 @@ import NavBar from '../home/nav';
 const Home = () => {
     return (
         <div className="home">
-            <h1 className="text-center py-4">Welcome To Bank of PRK</h1>
-            <div className="container-out">
+            <h1 className="text-center py-4 welcome-head">Welcome To Bank of Barodchi</h1>
+            <div className="container-out my-3">
             <BrowserRouter>
             <NavBar/>
             <Routes>

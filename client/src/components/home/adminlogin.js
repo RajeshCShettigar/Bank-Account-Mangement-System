@@ -8,12 +8,9 @@ const AdminLogin = () => {
     useEffect(() => {
         inputRef.current.focus();
     }, []);
-    const resetForm=()=>{
-        setData({});
-      }
       const [data, setData] = useState({
         username: "",
-        password: "",
+        password: ""
     });
     const errRef=useRef();
     const [errMsg,setErrMsg]=useState('');
@@ -21,22 +18,20 @@ const AdminLogin = () => {
         setErrMsg(' ');
       },[]);
     const handle = (e) => {
-        const newdata = { ...data };
+        const newdata = {...data };
         newdata[e.target.id] = e.target.value;
         setData(newdata);
     }
     const submitData= (e)=>{
         e.preventDefault();
-        console.log(data);
         axios.post(url,data
             ).then(resp=>{
                 console.log(resp);
                 console.log(resp.data===true);
                 if(resp.data===true){
-                  
+                   console.log("success");          
                 }else{
                    setErrMsg("Invalid username or password");
-                    resetForm();
                 }
             }).catch(err=>{
                 console.log(err);

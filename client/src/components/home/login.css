@@ -7,7 +7,7 @@
     padding-left: 15px;
     padding-right: 15px;
     width:320px;
-    background-color: rgb(248, 207, 158);
+    color:black;
 }
 
 .login-box h1{
@@ -25,7 +25,7 @@
   font-size: 20px;
   padding: 8px 0px;
   margin: 8px 0;
-  border-bottom: 1px solid #4caf50;
+  border-bottom: 1px solid rgb(111, 255, 111);;
 }
 .textbox i{
   width: 26px;
@@ -36,16 +36,18 @@
   border: none;
   outline: none;
   background: none;
-  color: white;
   font-size: 18px;
   width: 80%;
   float: left;
   margin: 0 10px;
 }
-.btn{
+.textbox ::placeholder{
+  color:white;
+}
+.login-box .btn{
   width: 100%;
   background: none;
-  border: 2px solid #4caf50;
+  border: 2px solid rgb(111, 255, 111);;
   color: white;
   padding: 5px;
   font-size: 18px;
@@ -53,5 +55,5 @@
   margin: 12px 0;
 }
 .btn:hover{
-    background-color: #4caf50;
+    background-color: rgb(111, 255, 111);
 }
