@@ -42,13 +42,13 @@
   margin: 0 10px;
 }
 .textbox ::placeholder{
-  color:white;
+  color:black;
 }
 .login-box .btn{
   width: 100%;
   background: none;
   border: 2px solid rgb(111, 255, 111);;
-  color: white;
+  color: black;
   padding: 5px;
   font-size: 18px;
   cursor: pointer;

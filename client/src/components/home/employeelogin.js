@@ -1,8 +1,12 @@
 import './login.css';
+import './style.css';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import NavBar from './nav';
+import { useNavigate } from 'react-router-dom';
 
 const EmployeeLogin=()=>{
+    const navigate = useNavigate();
     const url="http://localhost:5000/login/validateemployeelogin";
     const inputRef = useRef(null);
     useEffect(() => {
@@ -31,13 +35,21 @@ const EmployeeLogin=()=>{
             ).then(resp=>{
                 if(resp.data===true){
                    console.log("login success");
+                   navigate('/employee')
                 }else{
+                    setErrMsg("Invalid username or password")
                 }
             }).catch(err=>{
                 console.log(err);
             });
     }
     return (
+        <>
+        <div className="home">
+                <h1 className="text-center py-4 welcome-head">Welcome To Yes Bank</h1>
+                <div className="container-out my-3">
+                <NavBar/>
+            
         <div className="employee-login">
             <div className="login-box">
                 <h1>Sign In</h1>
@@ -60,6 +72,9 @@ const EmployeeLogin=()=>{
                 </form>
             </div>
         </div>
+        </div>
+        </div>
+        </>
     )
 }
 export default EmployeeLogin;

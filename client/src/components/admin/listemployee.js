@@ -1,6 +1,7 @@
 import './style.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import NavBar from './nav';
 
 const ListEmployee = () => {
     const [empData, setempData] = useState([]);
@@ -18,6 +19,8 @@ const ListEmployee = () => {
         employeeData();
     }, []);
     return (
+        <>
+        <NavBar/>
         <div className='list-customer mx-4 my-2'>
             <div className="d-flex flex-row my-2 justify-content-center">
                 <h2 className="text-center">Employee Details</h2>
@@ -41,6 +44,7 @@ const ListEmployee = () => {
                 </tbody>
             </table>
         </div>
+        </>
     );
 };
 

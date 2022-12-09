@@ -23,7 +23,7 @@ const NavBar = () => {
                         <Link className="nav-link text-white" to="/listcustomer">List Customer</Link>
                     </li>
                     <li className="nav-item px-4">
-                        <Link className="nav-link text-white" to="/Logout">Logout</Link>
+                        <Link className="nav-link text-white" to="/employeelogin">Logout</Link>
                     </li>
                 </ul>
             </div>

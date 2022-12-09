@@ -1,6 +1,7 @@
 import './style.css';
 import React, { useState, useRef, useEffect } from 'react';
 import Axios from 'axios';
+import NavBar from './nav';
 
 const DeleteCustomer = () => {
   const deleteRef=useRef();
@@ -38,6 +39,8 @@ const DeleteCustomer = () => {
       setData({});
     }
     return (
+        <>
+        <NavBar/>
         <div className="delete-account mx-4 ">
             <div className="detail-entry mt-4 px-4 py-4">
             <form onSubmit={(e)=>submitData(e)}>
@@ -54,6 +57,7 @@ const DeleteCustomer = () => {
             <div ref={deleteRef} className={successMsg?"success-msg-on my-4 ":"success-msg-off"}
                     aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
         </div >
+        </>
     )
 }
 

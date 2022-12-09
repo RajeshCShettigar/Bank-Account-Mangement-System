@@ -17,7 +17,7 @@ const NavBar = () => {
                         <Link className="nav-link text-white" to="/newemployee">New Employee</Link>
                     </li>
                     <li className="nav-item px-4">
-                        <Link className="nav-link text-white" to="/listcustomer">List Customer</Link>
+                        <Link className="nav-link text-white" to="/listadmincustomer">List Customer</Link>
                     </li>
                     <li className="nav-item px-4">
                         <Link className="nav-link text-white" to="/listemployee">List Employee</Link>
@@ -29,7 +29,7 @@ const NavBar = () => {
                         <Link className="nav-link text-white" to="/deleteemployee">Delete Employee</Link>
                     </li>
                     <li className="nav-item px-4">
-                        <Link className="nav-link text-white" to="/home">Logout</Link>
+                        <Link className="nav-link text-white" to="/adminlogin">Logout</Link>
                     </li>
                 </ul>
             </div>

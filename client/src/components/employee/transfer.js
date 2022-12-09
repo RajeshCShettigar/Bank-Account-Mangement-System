@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import NavBar from './nav';
 
 const Transfer=()=>{
     const transferRef=useRef();
@@ -73,6 +74,8 @@ const Transfer=()=>{
         });  
       };
     return(
+        <>
+        <NavBar/>
         <div className="withdraw-amount">
         <div className="detail-entry mt-4 mx-4 px-4 py-4">
         <h4 className="text-center">Details Entry</h4>
@@ -98,6 +101,7 @@ const Transfer=()=>{
         <div ref={transferRef} className={successMsg?"success-msg-on my-4 mx-4":"success-msg-off"}
                     aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
     </div>
+    </>
     )
 }
 

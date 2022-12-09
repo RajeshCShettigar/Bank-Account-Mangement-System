@@ -1,6 +1,7 @@
 import './style.css';
 import React,{useState,useEffect,useRef} from 'react';
 import Axios from 'axios';
+import NavBar from './nav';
 
 const NewEmployee=()=>{
   const newemployeeRef=useRef();
@@ -43,6 +44,8 @@ const NewEmployee=()=>{
       setData({});
     }
     return(
+      <>
+      <NavBar/>
       <div className="employee mx-1 mt-1 px-4 py-4">
            <div className="new-customer text-left ">
             <h1 className="text-center"> Employee Details</h1>
@@ -68,6 +71,7 @@ const NewEmployee=()=>{
             <div ref={newemployeeRef} className={successMsg?"success-msg-on my-4 ":"success-msg-off"}
                     aria-live="assertive"><h4 className="text-center msg py-2">{successMsg}</h4></div>
         </div>
+        </>
       )
 }
 export default NewEmployee;

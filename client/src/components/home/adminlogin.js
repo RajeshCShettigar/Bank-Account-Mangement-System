@@ -1,8 +1,12 @@
 import './login.css';
+import './style.css';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
+import NavBar from './nav';
+import { useNavigate } from 'react-router-dom';
 
 const AdminLogin = () => {
+    const navigate = useNavigate();
     const url="http://localhost:5000/login/validateadminlogin";
     const inputRef = useRef(null);
     useEffect(() => {
@@ -29,7 +33,8 @@ const AdminLogin = () => {
                 console.log(resp);
                 console.log(resp.data===true);
                 if(resp.data===true){
-                   console.log("success");          
+                   console.log("success"); 
+                   navigate('/admin');
                 }else{
                    setErrMsg("Invalid username or password");
                 }
@@ -38,6 +43,11 @@ const AdminLogin = () => {
             });
     }
     return (
+        <>
+        <div className="home">
+                <h1 className="text-center py-4 welcome-head">Welcome To Yes Bank</h1>
+                <div className="container-out my-3">
+                <NavBar/> 
         <div className="admin-login">
             <div className="login-box">
                 <h1>Sign In</h1>
@@ -60,6 +70,9 @@ const AdminLogin = () => {
                     aria-live="assertive">{errMsg}</p>
             </div>
         </div>
+        </div>
+        </div>
+        </>
     )
 }
 export default AdminLogin;
