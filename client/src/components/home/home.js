@@ -5,8 +5,8 @@ const Home = () => {
     return (
         <>
             <div className="home">
-                <h1 className="text-center py-4 welcome-head">Welcome To Yes Bank</h1>
-                <div className="container-out my-3">
+                <h1 className="text-center py-2 welcome-head">Welcome To Yes Bank</h1>
+                <div className="container-out my-4">
                 <NavBar/>
                 <h2 className='text-center py-4 welcome-head'>Select The Above Option ☝️</h2>
                 </div>

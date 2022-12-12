@@ -6,7 +6,7 @@ const Employee=()=>{
         <>
         <NavBar/>
         <div className="d-flex flex-row my-2 justify-content-center">
-                <h2 className="text-center">Welcome to Employee Dashboard</h2>
+                <h2 className="text-center text-black">Welcome to Employee Dashboard</h2>
         </div>
         </>
     )

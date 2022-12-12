@@ -47,7 +47,7 @@ const EmployeeLogin=()=>{
         <>
         <div className="home">
                 <h1 className="text-center py-4 welcome-head">Welcome To Yes Bank</h1>
-                <div className="container-out my-3">
+                <div className="container-out my-4">
                 <NavBar/>
             
         <div className="employee-login">
@@ -64,7 +64,9 @@ const EmployeeLogin=()=>{
                     <input type="password"onChange={(e) => handle(e)} value={data.password}  
                     autoComplete="off" placeholder="Password" id="password" required/>
                 </div>
+                <div className="sign-div my-4">
                 <button type="submit" className="btn">Sign in</button>
+                </div>
                 <div>
                     <p ref={errRef} className={errMsg?"err-msg-on":"err-msg-off"}
                     aria-live="assertive">{errMsg}</p>

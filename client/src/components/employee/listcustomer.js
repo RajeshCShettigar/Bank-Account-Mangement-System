@@ -23,7 +23,7 @@ const ListCustomer = () => {
     return (
         <>
         <NavBar/>
-        <div className='list-customer mx-4 my-2'>
+        <div className='list-customer mx-4'>
             <div className="d-flex flex-row my-2 justify-content-center">
                 <h2 className="text-center">Customer Details</h2>
             </div>

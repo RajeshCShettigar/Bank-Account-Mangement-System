@@ -20,11 +20,11 @@ const ListAdminCustomer = () => {
     customerData();
   },[]);
     return (
-        <>
+        <div>
         <NavBar/>
-        <div className='list-customer mx-4 my-2'>
-             <div className="d-flex flex-row my-2 justify-content-center">
-                <h2 className="text-center">Customer Details</h2>
+        <div className='list-customer mx-4 '>
+             <div className="d-flex flex-row justify-content-center py-1">
+                <h2 className="text-center text-black">Customer Details</h2>
             </div>
             <table className="table">
                 <thead className="thead-dark text-white bg-dark">
@@ -52,7 +52,7 @@ const ListAdminCustomer = () => {
                 </tbody>
             </table>
         </div>
-        </>
+        </div>
     );
 };
 
